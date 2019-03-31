@@ -9,7 +9,7 @@ class Application
 
     case req.path
     when /cart/
-      if @@cart.empty?
+      if @@cart.empty? #responds with empty cart message if the cart is empty
         resp.write "Your cart is empty"
       else
         @@cart.each do |item|
@@ -18,7 +18,7 @@ class Application
       end
     when /add/
       item_to_add = req.params["item"]
-      
+
       if @@items.include?(item_to_add)
         @@cart << item_to_add
         resp.write "added #{item_to_add}"
