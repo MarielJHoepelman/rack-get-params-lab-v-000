@@ -22,7 +22,7 @@ class Application
       if @@items.include?(item_to_add) # Will add an item that is in the @@items list
         @@cart << item_to_add
         resp.write "added #{item_to_add}"
-      else
+      else # Will not add an item that is not in the @@items list
         resp.write "We don't have that item"
       end
     end
